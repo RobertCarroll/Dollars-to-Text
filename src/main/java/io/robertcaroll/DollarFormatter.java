@@ -15,8 +15,9 @@ public class DollarFormatter {
         int unitIndex = numberSets.length - 1;
 
         for(int i = 0; i < numberSets.length; i++){
-            wordifiedDollars += NumberParser.wordifyNumber(Integer.valueOf(numberSets[i]));
-            wordifiedDollars += units[unitIndex];
+            String wordifiedNumber = NumberParser.wordifyNumber(Integer.valueOf(numberSets[i]));
+            wordifiedDollars += wordifiedNumber;
+            if(!wordifiedNumber.equals("")) wordifiedDollars += units[unitIndex];
             if(unitIndex > 0) unitIndex--;
         }
 
